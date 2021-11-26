@@ -6,7 +6,7 @@
 /*   By: jvico-ga <jvico-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:12:10 by jvico-ga          #+#    #+#             */
-/*   Updated: 2021/11/26 14:51:40 by jvico-ga         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:27:55 by jvico-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,35 +28,6 @@ size_t	ft_tohexadecimal(unsigned long long num, int mayus)
 	while (num != 0)
 	{
 		num /= 16;
-		j++;
-	}
-	invertido = malloc(sizeof(char) * j + 1);
-	if (invertido == NULL)
-		return (0);
-	invertido[j] = 0;
-	invert_num(aux_num, mayus, invertido, j);
-	j = ft_putstr_fd(invertido, 1);
-	free (invertido);
-	return (j);
-}
-
-size_t	ft_tohexadecimal_p(void *num, int mayus)
-{
-	char				*invertido;
-	size_t				j;
-	long unsigned		aux_num;
-	char				*p;
-	long unsigned		d;
-
-	p = num;
-	d = (long unsigned)p;
-	if (d == 0)
-		return (ft_putchar_fd('0', 1));
-	aux_num = d;
-	j = 0;
-	while (d != 0)
-	{
-		d /= 16;
 		j++;
 	}
 	invertido = malloc(sizeof(char) * j + 1);
